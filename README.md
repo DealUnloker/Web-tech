@@ -13,5 +13,5 @@ php -r "if (hash_file('sha384', 'composer-setup.php') === '756890a4488ce9024fc62
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 
-php composer.phar init
+php composer.phar init <br/>
 npm i
