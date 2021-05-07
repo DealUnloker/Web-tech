@@ -8,7 +8,7 @@
 </head>
 <body>
 
- <?php   
+<?php
 session_start();
 require 'vendor/autoload.php';
 require 'db/db.php';
@@ -16,11 +16,10 @@ require 'libs/auth.php';
 
 check_db();
 
-if(isset($_SESSION['login'])){
+if (isset($_SESSION['login'])) {
     echo 'Protected info. If you see this you are logged in.';
     echo '<a href="templates/logout.php">logout</a>';
-}
-else {
+} else {
     require 'templates/login.php';
 }
 
@@ -28,7 +27,3 @@ else {
 
 </body>
 </html>
-<?php
-
-
-
