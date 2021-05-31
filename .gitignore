@@ -1,1 +1,5 @@
 vendor
+.env
+.idea
+bootstrap
+storage
