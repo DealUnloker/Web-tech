@@ -10002,10 +10002,81 @@ h3 {
     border-color: #dee2e6;
   }
 }
-.navbar {
-  background-color: #1a202c;
+html, body {
+  min-width: 760px;
 }
 
-h1 {
-  color: red;
+#avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+.bg-image {
+  background: url("/img/background.jpg") no-repeat center;
+  background-size: cover;
+  height: 871px;
+}
+.bg-image h1 {
+  font-size: 14rem;
+  text-shadow: 4px 4px rgba(160, 82, 45, 0.51);
+}
+.bg-image p {
+  font-size: 2rem;
+  text-shadow: 2px 2px rgba(160, 82, 45, 0.82);
+}
+
+.promo {
+  height: 300px;
+  color: #ffffff;
+  background: #c1946a;
+  padding-top: 40px;
+}
+.promo h1 {
+  font-size: 4rem;
+  margin-bottom: 50px;
+}
+.promo a {
+  color: #ffffff;
+  font-size: 3rem;
+  background: #1a202c;
+  padding: 20px 90px 20px;
+  border-radius: 10px;
+}
+
+.recent_news {
+  height: 550px;
+  color: #1a202c;
+}
+.recent_news .text {
+  height: 100px;
+}
+.recent_news .more_news {
+  font-size: 1rem;
+}
+.recent_news .card {
+  margin: 15px;
+}
+.recent_news .card img {
+  width: 286px;
+  height: 180px;
+}
+
+.links {
+  margin-bottom: 0 !important;
+  padding: 0;
+}
+.links img {
+  height: 30px;
+  width: 30px;
+  margin: 0 10px;
+}
+
+.menu-card {
+  width: 30rem;
+  margin: auto;
 }

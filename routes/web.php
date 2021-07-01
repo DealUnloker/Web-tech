@@ -14,10 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [\App\Http\Controllers\MainController::class, 'index'])->name('index');
+Route::get('/services', [\App\Http\Controllers\MainController::class, 'services'])->name('services');
+Route::get('/news', [\App\Http\Controllers\MainController::class, 'news'])->name('news');
+Route::get('/reviews', [\App\Http\Controllers\MainController::class, 'reviews'])->name('reviews');
+Route::get('/about', [\App\Http\Controllers\MainController::class, 'about'])->name('about');
+
+Route::get('/menu', [App\Http\Controllers\MenuController::class, 'index'])->name('menu');
+
+Route::group([
+    'middleware' => \App\Http\Middleware\AdministratorControl::class,
+], function () {
+    Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+});

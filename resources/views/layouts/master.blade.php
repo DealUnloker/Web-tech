@@ -11,26 +11,72 @@
 </head>
 <body>
 <header>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        <a class="nav-link" href="#">Features</a>
-                        <a class="nav-link" href="#">Pricing</a>
+                <div class="d-flex">
+                    <a class="navbar-brand" href="/">Sport LIfe</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page"
+                               href="{{ route('index') }}">Головна</a>
+                            <a class="nav-link {{ Request::is('services') ? 'active' : '' }}"
+                               href="{{ route('services') }}">Послуги</a>
+                            <a class="nav-link {{ Request::is('news') ? 'active' : '' }}" href="{{ route('news') }}">Новини</a>
+                            <a class="nav-link {{ Request::is('reviews') ? 'active' : '' }}"
+                               href="{{ route('reviews') }}">Відгуки</a>
+                            <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="{{ route('about') }}">Про
+                                нас</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="userinfo d-flex justify-content-center align-items-center">
+                        @if(Auth::check())
+                        <a href="{{ route('menu') }}"><img id="avatar"
+                                src="{{ Storage::url(Auth::user()->avatar) }}"
+                                alt="avatar">
+                        </a>
+                        @else
+                            <a class="nav-link" href=" {{ url('/login') }}">Авторизуватися</a>
+                            <a class="nav-link" href=" {{ url('/register') }}">Зареєструватися</a>
+                        @endif
                     </div>
                 </div>
             </div>
         </nav>
     </div>
 </header>
-@yield('content')
+<main>
+    @yield('content')
+</main>
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4">
+        <section class="links">
+            <a href="https://www.facebook.com/"><img src="/img/icons/facebook.svg" alt="facebook"></a>
 
+            <a href="https://twitter.com/"><img src="/img/icons/twitter.svg" alt="twitter"></a>
+
+            <a href="https://instagram.com/"><img src="/img/icons/instagram.svg" alt="instagram"></a>
+
+            <a href="https://www.tiktok.com/"><img src="/img/icons/tiktok.svg" alt="tiktok"></a>
+
+            <a href="https://www.vk.com"><img src="/img/icons/vk.svg" alt="vk"></a>
+        </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2021 Copyright:
+        <a class="text-white" href="/">Sport Life</a>
+    </div>
+</footer>
+<!-- Footer -->
 <script src="/js/app.js"></script>
 </body>
 </html>
