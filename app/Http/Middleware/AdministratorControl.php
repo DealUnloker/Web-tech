@@ -17,7 +17,7 @@ class AdministratorControl
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->admin) {
+        if ( Auth::user() !== null && Auth::user()->admin) {
             return $next($request);
         }
         else{

@@ -24,36 +24,18 @@
             <h1>Останні новини</h1>
             <a class="more_news" href="{{ route('news') }}">Переглянути всі</a>
         </div>
-        <div class="news d-flex">
-            <div class="item">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="recent_news_container d-flex">
+            @foreach($news as $news_item)
+                <div class="item">
+                    <div class="card h-100" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ Storage::url($news_item->img) }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $news_item->name }}</h5>
+                            <p class="card-text"> {{ $news_item->description }} </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>            <div class="item">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 @endsection

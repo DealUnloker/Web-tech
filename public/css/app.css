@@ -10002,13 +10002,7 @@ h3 {
     border-color: #dee2e6;
   }
 }
-html, body {
-  min-width: 760px;
-}
-
 #avatar {
-  width: 50px;
-  height: 50px;
   border-radius: 50%;
   image-rendering: -moz-crisp-edges;
   image-rendering: -o-crisp-edges;
@@ -10064,6 +10058,8 @@ html, body {
 .recent_news .card img {
   width: 286px;
   height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .links {
@@ -10079,4 +10075,56 @@ html, body {
 .menu-card {
   width: 30rem;
   margin: auto;
+}
+
+.admin .card {
+  margin-top: 20px;
+}
+
+.news {
+  min-height: 730px;
+}
+.news .news-title {
+  text-align: center;
+  padding: 20px 0;
+}
+.news .card {
+  margin-bottom: 20px;
+}
+.news .card .text-info {
+  padding: 0;
+  margin: 0;
+}
+
+.services {
+  min-height: 730px;
+}
+.services .services-title {
+  text-align: center;
+  padding: 20px 0;
+}
+.services .card {
+  width: 20rem;
+  margin: 20px 0;
+}
+
+.reviews {
+  min-height: 730px;
+}
+.reviews .reviews-title {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.bg-image-full {
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 1123px) {
+  .promo {
+    height: 400px;
+  }
 }

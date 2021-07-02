@@ -24,9 +24,12 @@ Route::get('/reviews', [\App\Http\Controllers\MainController::class, 'reviews'])
 Route::get('/about', [\App\Http\Controllers\MainController::class, 'about'])->name('about');
 
 Route::get('/menu', [App\Http\Controllers\MenuController::class, 'index'])->name('menu');
+Route::post('/menu/review', [\App\Http\Controllers\MenuController::class, 'add_review'])->name('add_review');
 
 Route::group([
     'middleware' => \App\Http\Middleware\AdministratorControl::class,
 ], function () {
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+    Route::resource('/admin/services', \App\Http\Controllers\ServiceController::class);
+    Route::resource('/admin/news', \App\Http\Controllers\NewsController::class);
 });

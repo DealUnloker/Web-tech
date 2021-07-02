@@ -7,13 +7,8 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-html, body {
-    min-width: 760px;
-}
 
 #avatar {
-    width: 50px;
-    height: 50px;
     border-radius: 50%;
     image-rendering: -moz-crisp-edges;
     image-rendering: -o-crisp-edges;
@@ -77,6 +72,7 @@ html, body {
         img {
             width: 286px;
             height: 180px;
+            object-fit: cover;
         }
     }
 }
@@ -97,4 +93,57 @@ html, body {
 .menu-card{
     width: 30rem;
     margin: auto;
+}
+
+.admin .card {
+    margin-top: 20px;
+}
+
+.news {
+    min-height: 730px;
+    .news-title{
+        text-align: center;
+        padding: 20px 0;
+    }
+    .card {
+        margin-bottom: 20px;
+        .text-info{
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+.services{
+    min-height: 730px;
+    .services-title{
+        text-align: center;
+        padding: 20px 0;
+    }
+    .card {
+        width: 20rem;
+        margin: 20px 0;
+    }
+}
+
+.reviews{
+    min-height: 730px;
+    .reviews-title{
+        text-align: center;
+        padding: 20px 0;
+    }
+}
+
+.bg-image-full {
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+}
+
+
+@media screen and (max-width: 1123px) {
+    .promo{
+        height: 400px;
+    }
 }
